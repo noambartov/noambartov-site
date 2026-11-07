@@ -205,6 +205,12 @@
   html[lang=he] form input, html[lang=he] form textarea, html[lang=he] form button{font-family:var(--body);font-stretch:75%}
   html[lang=he] form button{font-family:var(--title);font-weight:400;font-size:1.3rem}
   .lang-switch button[lang=he]{font-family:'Noto Sans Hebrew',sans-serif}
+
+  /* כותרות לסרטונים */
+  figure.work{margin:0}
+  figure.work figcaption{margin-top:8px;font-size:1rem;line-height:1.4;text-align:center;color:var(--ink)}
+  html[lang=en] figure.work figcaption{font-family:'Abel',sans-serif;font-size:1.05rem;letter-spacing:.02em}
+  .single figure.work figcaption{display:none}
 </style>
 </head>
 <body>
@@ -235,7 +241,7 @@
   <div class="wrap">
     <h2 data-l="he">יש לך שיר שמחכה להפוך להקלטה?</h2>
     <h2 data-l="en">Got a song waiting to be recorded?</h2>
-    <div class="single"><button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button></div>
+    <div class="single"><figure class="work"><button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button><figcaption>Wartime Lullaby <span data-l="en">(feat. Daniella Goldfine)</span><span data-l="he">(עם דניאלה גולדפיין)</span></figcaption></figure></div>
     <p class="text" data-l="he">אני נעם ברטוב, מלחין, מעבד ומפיק. באולפן הביתי שלי אני מלווה זמרים-יוצרים מהסקיצה ועד שיר מוקלט, מעובד ומוכן לעולם, עם נגנים חיים.</p>
     <p class="text" data-l="en">I'm Noam Bartov, a composer, arranger and producer. In my home studio I guide singer-songwriters from a first sketch to a song that's recorded, arranged and ready for the world, with live musicians.</p>
 
@@ -278,9 +284,9 @@
     <h1 class="page-title"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></h1>
     <h2><span data-l="en">some of my orchestral works, press to play and view</span><span data-l="he">יצירות תזמורתיות שלי, לחצו לצפייה והאזנה</span></h2>
     <div class="grid">
-      <button class="yt" type="button" data-id="26jr1bRnnfQ" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="_fV1tio9f8E" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="RFX2oWaRHB8" aria-label="Play video"></button>
+      <figure class="work"><button class="yt" type="button" data-id="26jr1bRnnfQ" aria-label="Play video"></button><figcaption>Subtle Mutual Dependency</figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="_fV1tio9f8E" aria-label="Play video"></button><figcaption>Brick</figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="RFX2oWaRHB8" aria-label="Play video"></button><figcaption>Greek Island</figcaption></figure>
     </div>
   </div>
 </section>
@@ -290,9 +296,9 @@
     <h1 class="page-title"><span data-l="en">Studio Production</span><span data-l="he">הפקה באולפן</span></h1>
     <h2><span data-l="en">musical production for other artists</span><span data-l="he">הפקה מוזיקלית לאמנים אחרים</span></h2>
     <div class="grid">
-      <button class="yt" type="button" data-id="JBJwM_0zgWo" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="mujNX9upjF8" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button>
+      <figure class="work"><button class="yt" type="button" data-id="JBJwM_0zgWo" aria-label="Play video"></button><figcaption><span data-l="en">Achen Bacharnu Bametim · Release</span><span data-l="he">אכן בחרנו במתים · Release</span></figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="mujNX9upjF8" aria-label="Play video"></button><figcaption><span data-l="en">Ktzat Ometz · Noa Goldberg</span><span data-l="he">קצת אומץ · נועה גולדברג</span></figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button><figcaption>Wartime Lullaby <span data-l="en">(feat. Daniella Goldfine)</span><span data-l="he">(עם דניאלה גולדפיין)</span></figcaption></figure>
     </div>
     <div class="grid audio">
       <iframe loading="lazy" title="Bandcamp album" src="https://bandcamp.com/EmbeddedPlayer/album=2202869279/size=small/bgcol=ffffff/linkcol=C47A5A/transparent=true/"></iframe>
@@ -306,8 +312,8 @@
     <h1 class="page-title"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></h1>
     <h2><span data-l="en">some of my music for films and media</span><span data-l="he">מוזיקה שכתבתי לסרטים ולמדיה</span></h2>
     <div class="grid">
-      <button class="yt" type="button" data-id="K2LZRdn3qeY" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="8mRoZdn0MX4" aria-label="Play video"></button>
+      <figure class="work"><button class="yt" type="button" data-id="K2LZRdn3qeY" aria-label="Play video"></button><figcaption>Honey, let me hurt you · Charlie Alan</figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="8mRoZdn0MX4" aria-label="Play video"></button><figcaption>The Composer's Journey · Berlin</figcaption></figure>
     </div>
   </div>
 </section>
@@ -317,9 +323,9 @@
     <h1 class="page-title"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></h1>
     <h2><span data-l="en">collaborations with various artists</span><span data-l="he">שיתופי פעולה עם אמנים שונים</span></h2>
     <div class="grid">
-      <button class="yt" type="button" data-id="pAR4MPIz358" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="BeP0PL2gzmo" aria-label="Play video"></button>
-      <button class="yt" type="button" data-id="YRlsWK8aoJ4" aria-label="Play video"></button>
+      <figure class="work"><button class="yt" type="button" data-id="pAR4MPIz358" aria-label="Play video"></button><figcaption>The Emerald City · Intonation 2024</figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="BeP0PL2gzmo" aria-label="Play video"></button><figcaption><span data-l="en">Ma'ayan · Harp Festival, Tel Aviv 2025</span><span data-l="he">מעיין · פסטיבל הנבל, תל אביב 2025</span></figcaption></figure>
+      <figure class="work"><button class="yt" type="button" data-id="YRlsWK8aoJ4" aria-label="Play video"></button><figcaption>Desert Ship · <span data-l="en">Naam Ensemble &amp; Mamelo Gaitanopoulos</span><span data-l="he">אנסמבל נע'ם וממלו גייטנופולוס</span></figcaption></figure>
     </div>
   </div>
 </section>
