@@ -26,6 +26,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="fonts/KtavYadCLM-BoldItalic.woff2" as="font" type="font/woff2" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;600&family=Nanum+Pen+Script&family=Playpen+Sans+Hebrew:wght@300;400;500&family=Noto+Sans+Hebrew:wdth,wght@62.5..100,300..600&display=swap" rel="stylesheet">
 <style>
   /* שני פונטים בלבד לשתי השפות: Amatic SC לכותרות ו-Assistant לטקסט. לשניהם יש עברית ואנגלית באותו סגנון */
@@ -189,8 +190,9 @@
     .hero-img{height:34vh}
   }
 
-  /* עברית: Playpen Sans Hebrew לכותרות (ברוח Nanum Pen), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
-  html[lang=he]{--title:'Playpen Sans Hebrew', cursive; --body:'Noto Sans Hebrew', sans-serif}
+  /* עברית: Ktav Yad CLM לכותרות (ברוח Nanum Pen, קובץ מקומי ב-fonts/), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
+  @font-face{font-family:'Ktav Yad';src:url(fonts/KtavYadCLM-BoldItalic.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0590-05FF,U+FB1D-FB4F}
+  html[lang=he]{--title:'Ktav Yad', 'Playpen Sans Hebrew', cursive; --body:'Noto Sans Hebrew', sans-serif}
   html[lang=he] body{font-stretch:75%;font-weight:300}
   html[lang=he] b, html[lang=he] .steps b{font-weight:500}
   html[lang=he] h2, html[lang=he] h3, html[lang=he] .page-title, html[lang=he] .hook,
@@ -222,6 +224,16 @@
     footer nav{display:grid !important;grid-template-columns:repeat(3,auto);justify-content:center !important;justify-items:center;overflow-x:visible;white-space:nowrap;gap:0 24px !important;padding:0 8px;font-size:1.25rem !important}
     html[lang=he] footer nav{font-size:1.2rem !important}
   }
+  /* Ktav Yad גדול יותר מ-Playpen באותו גודל, לכן מקטינים */
+  html[lang=he] .page-title{font-size:2rem}
+  html[lang=he] #form h2{font-size:1.75rem}
+  html[lang=he] main > section:not(#form) h2{font-size:1.3rem}
+  html[lang=he] h3{font-size:1.35rem}
+  html[lang=he] .hook{font-size:1.4rem}
+  html[lang=he] .sub{font-family:var(--body);margin-top:4px}
+  html[lang=he] footer nav{font-size:1.1rem !important;line-height:1.8}
+  html[lang=he] header .logo{font-size:2.8rem}
+  @media (max-width:600px){ html[lang=he] header .logo{font-size:2.2rem} html[lang=he] .page-title{font-size:1.8rem} html[lang=he] #form h2{font-size:1.5rem} }
 </style>
 </head>
 <body>

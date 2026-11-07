@@ -1,0 +1,6 @@
+Ktav Yad CLM (Bold Italic)
+Copyright 2002-2024 Maxim Iorsh, Culmus project (https://culmus.sourceforge.io)
+License: GNU General Public License, version 2 (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+
+The file KtavYadCLM-BoldItalic.woff2 is a subset (Latin + Hebrew) of KtavYadCLM-BoldItalic.otf
+from the culmus-fancy package, converted to WOFF2. It is distributed here unmodified otherwise.
