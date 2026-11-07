@@ -92,6 +92,18 @@
   form button{font:inherit;font-weight:600;font-size:1.1rem;padding:12px;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
   form button:hover{filter:brightness(.95)}
   .hp{position:absolute;inset-inline-start:-9999px}
+  form select{width:100%;font:inherit;padding:12px 14px;border:1px solid #ccc;border-radius:6px;background:#fff;color:var(--ink);text-align:start}
+  form select:invalid{color:#888}
+  form select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  .services{list-style:none;padding:0;margin:28px auto 32px;max-width:680px;display:grid;gap:12px}
+  .services li{border:1px solid #e2dcd6;border-radius:8px;padding:14px 16px;position:relative}
+  .services li.picked{border-color:var(--accent);background:#fbf6f3}
+  .services button{all:unset;cursor:pointer;display:block;width:100%;text-align:start;color:var(--ink)}
+  .services button:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .services b{display:block;color:var(--accent);font-weight:600;margin-bottom:2px}
+  .svc-more{display:inline-block;margin-top:6px;color:var(--accent);font-size:.95rem}
+  .more-services{margin-top:28px}
+  .more-services a{color:var(--accent)}
   .form-msg{text-align:center;min-height:1.5em;margin:6px 0 0}
 
   /* מדיה */
@@ -139,8 +151,8 @@
   html[lang=en] .hook{font-family:'Amatic SC',cursive;font-weight:400;text-transform:uppercase;color:var(--ink);font-size:2.25rem}
   html[lang=en] #form h2{font-family:'Amatic SC',cursive;font-weight:700;font-size:2.6rem}
   html[lang=en] #form h3{font-family:'Amatic SC',cursive;font-weight:700;font-size:2rem}
-  html[lang=en] #form p,html[lang=en] #contact p,html[lang=en] .steps{font-family:'Abel',sans-serif;font-size:1.125rem;line-height:1.875}
-  html[lang=en] form input,html[lang=en] form textarea{font-family:'Amatic SC',cursive;font-size:1.5rem;font-weight:700;color:var(--ink)}
+  html[lang=en] #form p,html[lang=en] #contact p,html[lang=en] .steps,html[lang=en] .services{font-family:'Abel',sans-serif;font-size:1.125rem;line-height:1.875}
+  html[lang=en] form input,html[lang=en] form textarea,html[lang=en] form select{font-family:'Amatic SC',cursive;font-size:1.5rem;font-weight:700;color:var(--ink)}
   html[lang=en] form button{font-family:'Amatic SC',cursive;font-weight:700;font-size:2rem;padding:6px}
   html[lang=en] .credit{font-family:var(--logo);font-size:1.3rem;color:var(--ink)}
   html[lang=en] .btn-link{font-family:var(--logo);font-weight:400;font-size:1.7rem}
@@ -254,10 +266,6 @@
 <section id="home">
   <img class="hero-img" src="images/noam.jpg" width="1600" height="1067" alt="Noam Bartov in his home studio" fetchpriority="high">
   <div class="credit-row"><a class="credit" href="https://yuvalurbach.myportfolio.com/" target="_blank" rel="noopener"><span data-l="en">photo: Yuval Urbach</span><span data-l="he">צילום: יובל אורבך</span></a></div>
-  <div class="wrap center">
-    <p class="hook" data-l="he">זמרים-יוצרים? יש לכם שיר שמחכה להפוך להקלטה? <a href="#form">השאירו פרטים</a> ואחזור אליכם</p>
-    <p class="hook" data-l="en">Singer-songwriter? Got a song waiting to be recorded? <a href="#form">Leave your details</a> and I'll get back to you</p>
-  </div>
 </section>
 
 <!-- המודעה בפייסבוק מפנה ל-#form, לכן ה-id הזה חייב להישאר -->
@@ -300,6 +308,7 @@
       <button type="submit"><span data-l="he">שליחה</span><span data-l="en">Send</span></button>
       <p class="form-msg" role="status"></p>
     </form>
+    <p class="center more-services"><a href="#contact"><span data-l="he">לשירותים נוספים</span><span data-l="en">More services</span></a></p>
   </div>
 </section>
 
@@ -401,16 +410,41 @@
 
 <section id="contact">
   <div class="wrap">
-    <h1 class="page-title"><span data-l="en">Contact</span><span data-l="he">צור קשר</span></h1>
-    <p class="text center" data-l="en">Want to work together, commission a piece, or just say hello? Write to me here, or at <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
-    <p class="text center" data-l="he">רוצים לעבוד יחד, להזמין יצירה או סתם להגיד שלום? כתבו לי כאן, או במייל <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
+    <h1 class="page-title"><span data-l="en">Work with me</span><span data-l="he">עבודה יחד</span></h1>
+    <p class="text center" data-l="he">יש לכם שיר, סרט או רעיון שצריך מוזיקה? בחרו במה מדובר וספרו לי, ואחזור אליכם עם הצעה. אפשר גם לכתוב ישירות ל-<a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
+    <p class="text center" data-l="en">Got a song, a film or an idea that needs music? Pick what it's about and tell me, and I'll get back to you with a proposal. You can also write directly to <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
+
+    <ul class="services">
+      <li><button type="button" data-service="song"><b><span data-l="he">הפקת שיר לזמרים-יוצרים</span><span data-l="en">Song production for singer-songwriters</span></b>
+        <span data-l="he">מהסקיצה ועד שיר מוקלט, מעובד ומוכן לעולם, עם נגנים חיים.</span><span data-l="en">From a first sketch to a song that's recorded, arranged and ready for the world, with live musicians.</span></button>
+        <a class="svc-more" href="#form"><span data-l="he">לכל הפרטים</span><span data-l="en">All the details</span></a></li>
+      <li><button type="button" data-service="composition"><b><span data-l="he">הלחנה</span><span data-l="en">Composition</span></b>
+        <span data-l="he">יצירה בהזמנה להרכב או לתזמורת, מוזיקה לסרט, לתיאטרון ולמחול.</span><span data-l="en">Commissioned works for ensemble or orchestra, music for film, theatre and dance.</span></button></li>
+      <li><button type="button" data-service="session"><b><span data-l="he">שעות סשן באולפן</span><span data-l="en">Studio session hours</span></b>
+        <span data-l="he">הקלטה באולפן הביתי שלי, עם או בלי נגינה שלי בגיטרה ובס.</span><span data-l="en">Recording in my home studio, with or without me on guitar and bass.</span></button></li>
+      <li><button type="button" data-service="arrangement"><b><span data-l="he">עיבוד</span><span data-l="en">Arrangement</span></b>
+        <span data-l="he">עיבוד לשיר קיים, להרכב קטן, לכלי קשת, לנשיפה או לתזמורת.</span><span data-l="en">Arranging an existing song for a small band, strings, winds or orchestra.</span></button></li>
+      <li><button type="button" data-service="mix"><b><span data-l="he">עריכה, מיקס ומסטרינג</span><span data-l="en">Editing, mixing &amp; mastering</span></b>
+        <span data-l="he">יש לכם הקלטות? אני אערוך, אמקסס ואכין אותן להשמעה.</span><span data-l="en">Already recorded? I'll edit, mix and get it ready for release.</span></button></li>
+    </ul>
+
     <form id="contact-form" class="site-form" action="https://api.web3forms.com/submit" method="post">
       <input type="hidden" name="access_key" value="261a775e-466a-4bc6-9764-9a4c94c92519">
       <input type="hidden" name="subject" value="פנייה חדשה מעמוד צור קשר (noambartov.com)">
       <input type="hidden" name="from_name" value="noambartov.com">
+      <select name="service" required aria-label="Service / שירות">
+        <option value="" disabled selected data-he="במה מדובר?" data-en="What is it about?">במה מדובר?</option>
+        <option value="הפקת שיר" data-key="song" data-he="הפקת שיר לזמרים-יוצרים" data-en="Song production">הפקת שיר לזמרים-יוצרים</option>
+        <option value="הלחנה" data-key="composition" data-he="הלחנה" data-en="Composition">הלחנה</option>
+        <option value="סשן באולפן" data-key="session" data-he="שעות סשן באולפן" data-en="Studio session hours">שעות סשן באולפן</option>
+        <option value="עיבוד" data-key="arrangement" data-he="עיבוד" data-en="Arrangement">עיבוד</option>
+        <option value="עריכה/מיקס/מסטרינג" data-key="mix" data-he="עריכה, מיקס ומסטרינג" data-en="Editing, mixing &amp; mastering">עריכה, מיקס ומסטרינג</option>
+        <option value="אחר" data-key="other" data-he="משהו אחר" data-en="Something else">משהו אחר</option>
+      </select>
       <input type="text" name="name" data-ph-he="שם" data-ph-en="Name" maxlength="128" required autocomplete="name">
       <input type="email" name="email" data-ph-he="מייל" data-ph-en="Email" maxlength="128" required autocomplete="email">
-      <textarea name="message" data-ph-he="הודעה" data-ph-en="Message" maxlength="16384" required></textarea>
+      <input type="tel" name="phone" data-ph-he="טלפון (לא חובה)" data-ph-en="Phone (optional)" minlength="7" maxlength="28" pattern="[0-9\-\(\)+ #*]+" autocomplete="tel">
+      <textarea name="message" data-ph-he="ספרו לי על הפרויקט" data-ph-en="Tell me about the project" maxlength="16384" required></textarea>
       <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="form" value="general">
       <input type="hidden" name="lang" value="">
@@ -514,6 +548,7 @@
     document.querySelectorAll('[data-ph-' + l + ']').forEach(function (el) {
       el.placeholder = el.getAttribute('data-ph-' + l);
     });
+    document.querySelectorAll('option[data-' + l + ']').forEach(function (o) { o.textContent = o.getAttribute('data-' + l); });
     document.querySelectorAll('.site-form [name=lang]').forEach(function (i) { i.value = l; });
     if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
   }
@@ -551,6 +586,26 @@
     if (target && target !== sec) target.scrollIntoView();
   }
   window.addEventListener('hashchange', route); route();
+
+  // לחיצה על שירות בצור קשר בוחרת אותו בטופס
+  var svcSelect = document.querySelector('#contact-form [name=service]');
+  function pickService(key) {
+    document.querySelectorAll('.services li').forEach(function (li) {
+      li.classList.toggle('picked', !!li.querySelector('[data-service="' + key + '"]'));
+    });
+    var o = svcSelect.querySelector('[data-key="' + key + '"]');
+    if (o) svcSelect.value = o.value;
+  }
+  document.querySelectorAll('[data-service]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      pickService(b.dataset.service);
+      document.getElementById('contact-form').scrollIntoView({behavior: 'smooth', block: 'start'});
+      setTimeout(function () { document.querySelector('#contact-form [name=name]').focus({preventScroll: true}); }, 500);
+    });
+  });
+  svcSelect.addEventListener('change', function () {
+    var o = svcSelect.selectedOptions[0]; pickService(o && o.dataset.key);
+  });
 
   // שליחת טפסים דרך Web3Forms, עם הודעה בשפת האתר
   var msgs = {
