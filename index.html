@@ -256,13 +256,15 @@
     <p class="text" data-l="en">The first meeting costs 800 ILS, and if we continue together it's deducted from the production price. The final cost depends on the artistic decisions we make, and either way you'll know it before we start.</p>
 
     <h3><span data-l="he">ספרו לי על השיר שלכם</span><span data-l="en">Tell me about your song</span></h3>
-    <!-- TODO: action של שירות הטפסים ייקבע בשלב האחסון -->
-    <form id="song-form" class="site-form" action="#" method="post">
+    <form id="song-form" class="site-form" action="https://api.web3forms.com/submit" method="post">
+      <input type="hidden" name="access_key" value="261a775e-466a-4bc6-9764-9a4c94c92519">
+      <input type="hidden" name="subject" value="פנייה חדשה מדף הזמרים-יוצרים (noambartov.com)">
+      <input type="hidden" name="from_name" value="noambartov.com">
       <input type="text" name="name" data-ph-he="שמי" data-ph-en="Name" maxlength="128" required autocomplete="name">
       <input type="email" name="email" data-ph-he="מייל" data-ph-en="Email" maxlength="128" required autocomplete="email">
       <input type="tel" name="phone" data-ph-he="טלפון" data-ph-en="Phone" minlength="7" maxlength="28" pattern="[0-9\-\(\)+ #*]+" required autocomplete="tel">
       <textarea name="message" data-ph-he="הודעה" data-ph-en="Message" maxlength="16384" required></textarea>
-      <input class="hp" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="form" value="song">
       <input type="hidden" name="lang" value="">
       <button type="submit"><span data-l="he">שליחה</span><span data-l="en">Send</span></button>
@@ -370,12 +372,14 @@
     <h1 class="page-title"><span data-l="en">Contact</span><span data-l="he">צור קשר</span></h1>
     <p class="text center" data-l="en">Want to work together, commission a piece, or just say hello? Write to me here, or at <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
     <p class="text center" data-l="he">רוצים לעבוד יחד, להזמין יצירה או סתם להגיד שלום? כתבו לי כאן, או במייל <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
-    <!-- TODO: action של שירות הטפסים ייקבע בשלב האחסון -->
-    <form id="contact-form" class="site-form" action="#" method="post">
+    <form id="contact-form" class="site-form" action="https://api.web3forms.com/submit" method="post">
+      <input type="hidden" name="access_key" value="261a775e-466a-4bc6-9764-9a4c94c92519">
+      <input type="hidden" name="subject" value="פנייה חדשה מעמוד צור קשר (noambartov.com)">
+      <input type="hidden" name="from_name" value="noambartov.com">
       <input type="text" name="name" data-ph-he="שם" data-ph-en="Name" maxlength="128" required autocomplete="name">
       <input type="email" name="email" data-ph-he="מייל" data-ph-en="Email" maxlength="128" required autocomplete="email">
       <textarea name="message" data-ph-he="הודעה" data-ph-en="Message" maxlength="16384" required></textarea>
-      <input class="hp" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
       <input type="hidden" name="form" value="general">
       <input type="hidden" name="lang" value="">
       <button type="submit"><span data-l="he">שליחה</span><span data-l="en">Send</span></button>
@@ -517,6 +521,28 @@
     document.querySelector('main').scrollTop = 0;
   }
   window.addEventListener('hashchange', route); route();
+
+  // שליחת טפסים דרך Web3Forms, עם הודעה בשפת האתר
+  var msgs = {
+    sending: {he: 'שולח...', en: 'Sending...'},
+    ok: {he: 'תודה! ההודעה נשלחה, אחזור אליך בהקדם.', en: "Thanks! Your message was sent, I'll get back to you soon."},
+    err: {he: 'משהו השתבש. אפשר לנסות שוב או לכתוב ישירות ל-noambt@gmail.com', en: 'Something went wrong. Please try again or email noambt@gmail.com'}
+  };
+  document.querySelectorAll('.site-form').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var l = html.lang, out = f.querySelector('.form-msg'), btn = f.querySelector('button[type=submit]');
+      out.textContent = msgs.sending[l]; btn.disabled = true;
+      fetch(f.action, {method: 'POST', headers: {'Accept': 'application/json'}, body: new FormData(f)})
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.success) { f.reset(); out.textContent = msgs.ok[l]; }
+          else { out.textContent = msgs.err[l]; }
+        })
+        .catch(function () { out.textContent = msgs.err[l]; })
+        .finally(function () { btn.disabled = false; });
+    });
+  });
 </script>
 </body>
 </html>
