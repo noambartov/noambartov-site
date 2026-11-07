@@ -199,8 +199,8 @@
     footer nav::-webkit-scrollbar{display:none}
     footer .wrap{padding:0}
     .page-title{font-size:2.3rem} html[lang=en] .page-title{font-size:2.4rem}
-    .hero-img{height:auto;aspect-ratio:10/3}
-    .credit{font-size:.72rem !important} html[lang=en] .credit{font-size:1rem !important}
+    .hero-img{height:auto !important;aspect-ratio:1/1;max-height:calc(100svh - 315px);object-position:50% 45% !important}
+    .credit{font-size:.6rem !important;opacity:.85} html[lang=en] .credit{font-size:.8rem !important}
   }
 
   /* עברית: Ktav Yad CLM לכותרות (ברוח Nanum Pen, קובץ מקומי ב-fonts/), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
@@ -247,6 +247,7 @@
   html[lang=he] footer nav{font-size:1.1rem !important;line-height:1.8}
   html[lang=he] header .logo{font-size:2.8rem}
   @media (max-width:600px){ html[lang=he] header .logo{font-size:2.2rem} html[lang=he] .page-title{font-size:1.8rem} html[lang=he] #form h2{font-size:1.5rem} }
+  @media (max-width:600px){ header .sub{font-size:1.1rem !important} html[lang=he] header .sub{font-size:1.2rem !important} }
 </style>
 </head>
 <body>
@@ -264,7 +265,7 @@
 
 <main>
 <section id="home">
-  <img class="hero-img" src="images/noam.jpg" width="1600" height="1067" alt="Noam Bartov in his home studio" fetchpriority="high">
+  <picture><source media="(max-width:600px)" srcset="images/noam-mobile.jpg" width="620" height="620"><img class="hero-img" src="images/noam.jpg" width="1600" height="1067" alt="Noam Bartov in his home studio" fetchpriority="high"></picture>
   <div class="credit-row"><a class="credit" href="https://yuvalurbach.myportfolio.com/" target="_blank" rel="noopener"><span data-l="en">photo: Yuval Urbach</span><span data-l="he">צילום: יובל אורבך</span></a></div>
 </section>
 
