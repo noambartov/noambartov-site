@@ -211,6 +211,14 @@
   figure.work figcaption{margin-top:8px;font-size:1rem;line-height:1.4;text-align:center;color:var(--ink)}
   html[lang=en] figure.work figcaption{font-family:'Abel',sans-serif;font-size:1.05rem;letter-spacing:.02em}
   .single figure.work figcaption{display:none}
+
+  /* תת-כותרות בתוך עמוד מאוחד (הלחנה: תזמורתי + שיתופי פעולה; האזנה: סטרימינג + In The Box) */
+  .subsection{margin-top:56px;scroll-margin-top:24px}
+  h3.sub-title{margin:0 0 6px;color:var(--accent)}
+  html[lang=en] h3.sub-title{font-family:var(--logo);font-weight:400;font-size:2.2rem}
+  @media (max-width:600px){
+    footer nav{flex-wrap:wrap !important;justify-content:center !important;overflow-x:visible;white-space:normal;gap:0 18px !important}
+  }
 </style>
 </head>
 <body>
@@ -281,12 +289,22 @@
 
 <section id="orchestral">
   <div class="wrap">
-    <h1 class="page-title"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></h1>
+    <h1 class="page-title"><span data-l="en">Composition</span><span data-l="he">הלחנה</span></h1>
+    <h3 class="sub-title"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></h3>
     <h2><span data-l="en">some of my orchestral works, press to play and view</span><span data-l="he">יצירות תזמורתיות שלי, לחצו לצפייה והאזנה</span></h2>
     <div class="grid">
       <figure class="work"><button class="yt" type="button" data-id="26jr1bRnnfQ" aria-label="Play video"></button><figcaption>Subtle Mutual Dependency</figcaption></figure>
       <figure class="work"><button class="yt" type="button" data-id="_fV1tio9f8E" aria-label="Play video"></button><figcaption>Brick</figcaption></figure>
       <figure class="work"><button class="yt" type="button" data-id="RFX2oWaRHB8" aria-label="Play video"></button><figcaption>Greek Island</figcaption></figure>
+    </div>
+    <div id="collaborations" class="subsection">
+      <h3 class="sub-title"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></h3>
+      <h2><span data-l="en">collaborations with various artists</span><span data-l="he">שיתופי פעולה עם אמנים שונים</span></h2>
+      <div class="grid">
+        <figure class="work"><button class="yt" type="button" data-id="pAR4MPIz358" aria-label="Play video"></button><figcaption>The Emerald City · Intonation 2024</figcaption></figure>
+        <figure class="work"><button class="yt" type="button" data-id="BeP0PL2gzmo" aria-label="Play video"></button><figcaption><span data-l="en">Ma'ayan · Harp Festival, Tel Aviv 2025</span><span data-l="he">מעיין · פסטיבל הנבל, תל אביב 2025</span></figcaption></figure>
+        <figure class="work"><button class="yt" type="button" data-id="YRlsWK8aoJ4" aria-label="Play video"></button><figcaption>Desert Ship · <span data-l="en">Naam Ensemble &amp; Mamelo Gaitanopoulos</span><span data-l="he">אנסמבל נע'ם וממלו גייטנופולוס</span></figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -318,25 +336,18 @@
   </div>
 </section>
 
-<section id="collaborations">
-  <div class="wrap">
-    <h1 class="page-title"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></h1>
-    <h2><span data-l="en">collaborations with various artists</span><span data-l="he">שיתופי פעולה עם אמנים שונים</span></h2>
-    <div class="grid">
-      <figure class="work"><button class="yt" type="button" data-id="pAR4MPIz358" aria-label="Play video"></button><figcaption>The Emerald City · Intonation 2024</figcaption></figure>
-      <figure class="work"><button class="yt" type="button" data-id="BeP0PL2gzmo" aria-label="Play video"></button><figcaption><span data-l="en">Ma'ayan · Harp Festival, Tel Aviv 2025</span><span data-l="he">מעיין · פסטיבל הנבל, תל אביב 2025</span></figcaption></figure>
-      <figure class="work"><button class="yt" type="button" data-id="YRlsWK8aoJ4" aria-label="Play video"></button><figcaption>Desert Ship · <span data-l="en">Naam Ensemble &amp; Mamelo Gaitanopoulos</span><span data-l="he">אנסמבל נע'ם וממלו גייטנופולוס</span></figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <section id="streaming">
   <div class="wrap">
-    <h1 class="page-title"><span data-l="en">Streaming</span><span data-l="he">סטרימינג</span></h1>
+    <h1 class="page-title"><span data-l="en">Listen</span><span data-l="he">האזנה</span></h1>
     <h2><span data-l="en">some streaming links to my work</span><span data-l="he">להאזנה בשירותי הסטרימינג</span></h2>
     <div class="grid embed">
       <iframe loading="lazy" title="Spotify" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/artist/4x23q9U8QO3xhFk39a7l5Q"></iframe>
       <iframe loading="lazy" title="Apple Music" height="175" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/song/brick-live/1819152478"></iframe>
+    </div>
+    <div id="inthebox" class="subsection">
+      <h3 class="sub-title">In The Box</h3>
+      <h2><span data-l="en">music composed and produced inside the computer</span><span data-l="he">מוזיקה שהלחנתי והפקתי בתוך המחשב</span></h2>
+      <p class="center"><a class="btn-link" href="https://soundcloud.com/noam-bartov-394165908" target="_blank" rel="noopener"><span data-l="en">listen on SoundCloud</span><span data-l="he">להאזנה ב-SoundCloud</span></a></p>
     </div>
   </div>
 </section>
@@ -454,15 +465,12 @@
 <footer>
   <div class="wrap">
     <nav aria-label="Sections">
-      <a href="#home"><span data-l="en">Home</span><span data-l="he">ראשי</span></a>
-      <a href="#orchestral"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></a>
-      <a href="#production"><span data-l="en">Studio Production</span><span data-l="he">הפקה באולפן</span></a>
-      <a href="#film"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></a>
-      <a href="#streaming"><span data-l="en">Streaming</span><span data-l="he">סטרימינג</span></a>
-      <a href="#collaborations"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></a>
-      <a href="https://soundcloud.com/noam-bartov-394165908" target="_blank" rel="noopener">In The Box</a>
+      <a href="#orchestral"><span data-l="en">Composition</span><span data-l="he">הלחנה</span></a>
+      <a href="#production"><span data-l="en">Production</span><span data-l="he">הפקה</span></a>
+      <a href="#film"><span data-l="en">Film</span><span data-l="he">סרטים</span></a>
+      <a href="#streaming"><span data-l="en">Listen</span><span data-l="he">האזנה</span></a>
       <a href="#toys"><span data-l="en">Toys</span><span data-l="he">צעצועים</span></a>
-      <a href="#about"><span data-l="en">About Me</span><span data-l="he">עליי</span></a>
+      <a href="#about"><span data-l="en">About</span><span data-l="he">עליי</span></a>
       <a href="#contact"><span data-l="en">Contact</span><span data-l="he">צור קשר</span></a>
     </nav>
     <div class="footer-row">
@@ -518,13 +526,15 @@
   // ניתוב: הכתובת #xxx קובעת איזה חלק מוצג
   function route() {
     var id = location.hash.slice(1) || 'home';
-    var sec = document.querySelector('main > section#' + CSS.escape(id)) || document.getElementById('home');
+    var target = document.getElementById(id);
+    var sec = (target && target.closest('main > section')) || document.getElementById('home');
     document.querySelectorAll('main > section').forEach(function (s) { s.classList.toggle('active', s === sec); });
     sec.querySelectorAll('details').forEach(function (d) { d.open = true; });
     document.querySelectorAll('footer nav a').forEach(function (a) {
       a.classList.toggle('current', a.getAttribute('href') === '#' + sec.id);
     });
     document.querySelector('main').scrollTop = 0;
+    if (target && target !== sec) target.scrollIntoView();
   }
   window.addEventListener('hashchange', route); route();
 
