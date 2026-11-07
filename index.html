@@ -215,9 +215,12 @@
   /* תת-כותרות בתוך עמוד מאוחד (הלחנה: תזמורתי + שיתופי פעולה; האזנה: סטרימינג + In The Box) */
   .subsection{margin-top:56px;scroll-margin-top:24px}
   h3.sub-title{margin:0 0 6px;color:var(--accent)}
+  iframe.sc{width:100%;border:0;display:block}
+  html[lang=he] .logo{font-family:var(--title);font-weight:300;direction:rtl}
   html[lang=en] h3.sub-title{font-family:var(--logo);font-weight:400;font-size:2.2rem}
   @media (max-width:600px){
-    footer nav{flex-wrap:wrap !important;justify-content:center !important;overflow-x:visible;white-space:normal;gap:0 18px !important}
+    footer nav{display:grid !important;grid-template-columns:repeat(3,auto);justify-content:center !important;justify-items:center;overflow-x:visible;white-space:nowrap;gap:0 24px !important;padding:0 8px;font-size:1.25rem !important}
+    html[lang=he] footer nav{font-size:1.2rem !important}
   }
 </style>
 </head>
@@ -229,7 +232,7 @@
   <button type="button" data-set-lang="en" lang="en">English</button>
 </div>
   <div class="wrap">
-    <p class="logo"><a href="#home">Noam Bartov</a></p>
+    <p class="logo"><a href="#home"><span data-l="en">Noam Bartov</span><span data-l="he">נעם ברטוב</span></a></p>
     <p class="sub"><span data-l="en">composer &amp; music producer</span><span data-l="he">מלחין ומפיק מוזיקלי</span></p>
   </div>
 </header>
@@ -297,6 +300,14 @@
       <figure class="work"><button class="yt" type="button" data-id="_fV1tio9f8E" aria-label="Play video"></button><figcaption>Brick</figcaption></figure>
       <figure class="work"><button class="yt" type="button" data-id="RFX2oWaRHB8" aria-label="Play video"></button><figcaption>Greek Island</figcaption></figure>
     </div>
+    <div id="film" class="subsection">
+      <h3 class="sub-title"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></h3>
+      <h2><span data-l="en">some of my music for films and media</span><span data-l="he">מוזיקה שכתבתי לסרטים ולמדיה</span></h2>
+      <div class="grid">
+        <figure class="work"><button class="yt" type="button" data-id="K2LZRdn3qeY" aria-label="Play video"></button><figcaption>Honey, let me hurt you · Charlie Alan</figcaption></figure>
+        <figure class="work"><button class="yt" type="button" data-id="8mRoZdn0MX4" aria-label="Play video"></button><figcaption>The Composer's Journey · Berlin</figcaption></figure>
+      </div>
+    </div>
     <div id="collaborations" class="subsection">
       <h3 class="sub-title"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></h3>
       <h2><span data-l="en">collaborations with various artists</span><span data-l="he">שיתופי פעולה עם אמנים שונים</span></h2>
@@ -325,17 +336,6 @@
   </div>
 </section>
 
-<section id="film">
-  <div class="wrap">
-    <h1 class="page-title"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></h1>
-    <h2><span data-l="en">some of my music for films and media</span><span data-l="he">מוזיקה שכתבתי לסרטים ולמדיה</span></h2>
-    <div class="grid">
-      <figure class="work"><button class="yt" type="button" data-id="K2LZRdn3qeY" aria-label="Play video"></button><figcaption>Honey, let me hurt you · Charlie Alan</figcaption></figure>
-      <figure class="work"><button class="yt" type="button" data-id="8mRoZdn0MX4" aria-label="Play video"></button><figcaption>The Composer's Journey · Berlin</figcaption></figure>
-    </div>
-  </div>
-</section>
-
 <section id="streaming">
   <div class="wrap">
     <h1 class="page-title"><span data-l="en">Listen</span><span data-l="he">האזנה</span></h1>
@@ -347,7 +347,9 @@
     <div id="inthebox" class="subsection">
       <h3 class="sub-title">In The Box</h3>
       <h2><span data-l="en">music composed and produced inside the computer</span><span data-l="he">מוזיקה שהלחנתי והפקתי בתוך המחשב</span></h2>
-      <p class="center"><a class="btn-link" href="https://soundcloud.com/noam-bartov-394165908" target="_blank" rel="noopener"><span data-l="en">listen on SoundCloud</span><span data-l="he">להאזנה ב-SoundCloud</span></a></p>
+      <div class="embed">
+        <iframe class="sc" loading="lazy" title="SoundCloud · In The Box" height="450" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/noam-bartov-394165908&amp;color=%23c47a5a&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=true&amp;show_reposts=false&amp;visual=false"></iframe>
+      </div>
     </div>
   </div>
 </section>
@@ -467,7 +469,6 @@
     <nav aria-label="Sections">
       <a href="#orchestral"><span data-l="en">Composition</span><span data-l="he">הלחנה</span></a>
       <a href="#production"><span data-l="en">Production</span><span data-l="he">הפקה</span></a>
-      <a href="#film"><span data-l="en">Film</span><span data-l="he">סרטים</span></a>
       <a href="#streaming"><span data-l="en">Listen</span><span data-l="he">האזנה</span></a>
       <a href="#toys"><span data-l="en">Toys</span><span data-l="he">צעצועים</span></a>
       <a href="#about"><span data-l="en">About</span><span data-l="he">עליי</span></a>
