@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noam Bartov | composer &amp; music producer</title>
+<meta name="description" content="Noam Bartov, composer, arranger and producer. Song production for singer-songwriters in a Jerusalem home studio, with live musicians. | נעם ברטוב, מלחין, מעבד ומפיק.">
+<meta property="og:title" content="Noam Bartov | composer & music producer">
+<meta property="og:description" content="זמרים-יוצרים? יש לכם שיר שמחכה להפוך להקלטה?">
+<meta property="og:image" content="https://noambartov.com/images/card.jpg">
+<link rel="canonical" href="https://noambartov.com/">
+<link rel="alternate" hreflang="en" href="https://noambartov.com/?lang=en">
+<link rel="alternate" hreflang="he" href="https://noambartov.com/?lang=he">
+<script>
+  // בחירת שפה לפני הציור, כדי שלא יהבהב: ?lang= > #form (המודעה) > בחירה שמורה > שפת הדפדפן
+  (function () {
+    var q = new URLSearchParams(location.search).get('lang'), l = null;
+    if (q === 'he' || q === 'en') l = q;
+    else if (location.hash === '#form') l = 'he';
+    else { try { l = localStorage.getItem('lang'); } catch (e) {} }
+    if (l !== 'he' && l !== 'en') l = /^he|^iw/i.test(navigator.language || '') ? 'he' : 'en';
+    document.documentElement.className = 'js';
+    document.documentElement.lang = l;
+    document.documentElement.dir = l === 'he' ? 'rtl' : 'ltr';
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abel&family=Amatic+SC:wght@400;700&family=Assistant:wght@300;400;600&family=Nanum+Pen+Script&family=Playpen+Sans+Hebrew:wght@300;400;500&family=Noto+Sans+Hebrew:wdth,wght@62.5..100,300..600&display=swap" rel="stylesheet">
+<style>
+  /* שני פונטים בלבד לשתי השפות: Amatic SC לכותרות ו-Assistant לטקסט. לשניהם יש עברית ואנגלית באותו סגנון */
+  :root{
+    --bg:#ffffff; --ink:#555555; --muted:#8a8a8a; --accent:#C47A5A; --line:rgba(0,0,0,.1);
+    --logo:'Nanum Pen Script', cursive;
+    --title:'Amatic SC', 'Assistant', cursive;
+    --body:'Assistant', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-weight:400;font-size:18px;line-height:1.7}
+  a{color:inherit;text-decoration:none}
+  main a[href^="mailto"]{color:var(--accent)}
+  a:hover{color:var(--accent)}
+
+  /* כל קישור מציג רק את החלק שלו, כמו ב-Carrd */
+  html.js main > section{display:none}
+  html.js main > section.active{display:block}
+  main > section:first-child{border-top:0}
+  nav a.current{color:var(--accent)}
+
+  /* שפה: מציגים רק את הגרסה הפעילה */
+  html[lang=he] [data-l=en], html[lang=en] [data-l=he]{display:none !important}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+  section{padding:56px 0;border-top:1px solid var(--line);scroll-margin-top:56px}
+  h2,h3{font-family:var(--title);font-weight:700;line-height:1.2;text-align:center}
+  h2{font-size:2.6rem;margin:0 0 28px}
+  h3{font-size:2rem;margin:36px 0 10px}
+  p{margin:0 0 14px}
+  .text{max-width:680px;margin-inline:auto;text-align:start}
+  .center{text-align:center}
+
+  /* מתג שפה */
+  .lang-switch{position:fixed;top:12px;left:12px;direction:ltr;z-index:10;display:flex;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);overflow:hidden;font-family:var(--body);font-size:.95rem}
+  .lang-switch button{font:inherit;border:0;background:none;padding:6px 14px;cursor:pointer;color:var(--muted)}
+  .lang-switch button[aria-pressed=true]{background:var(--ink);color:#fff}
+
+  /* ראש */
+  header{text-align:center;padding:48px 0 0}
+  section{min-height:40vh}
+  .logo{font-family:var(--logo);font-weight:400;font-size:4.6rem;margin:0;line-height:1.1;direction:ltr}
+  .logo a{text-decoration:none}
+  .sub{font-family:var(--title);font-weight:700;font-size:1.9rem;margin:0}
+  .hero-img{display:block;width:100%;max-width:640px;height:auto;margin:24px auto 4px;border-radius:4px}
+  .credit{display:inline-block;font-size:.85rem;color:var(--muted);text-decoration:none}
+  .hook{font-family:var(--title);font-weight:700;font-size:2.1rem;line-height:1.35;max-width:640px;margin:20px auto 0}
+  .hook a{color:var(--accent)}
+
+  /* שלבים: המספר עובר צד לבד לפי כיוון השפה */
+  .steps{max-width:680px;margin:0 auto;padding:0;list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding-inline-start:46px;margin-bottom:14px}
+  .steps li::before{content:counter(s);position:absolute;inset-inline-start:0;top:2px;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:600;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+  .steps b{font-weight:600}
+
+  /* טופס */
+  form{max-width:520px;margin:12px auto 0;display:grid;gap:12px}
+  form input,form textarea{width:100%;font:inherit;padding:12px 14px;border:1px solid #ccc;border-radius:6px;background:#fff;color:var(--ink);text-align:start}
+  form input[type=email],form input[type=tel]{direction:ltr}
+  html[dir=rtl] form input[type=email],html[dir=rtl] form input[type=tel]{text-align:right}
+  form input:focus,form textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+  form textarea{min-height:120px;resize:vertical}
+  form button{font:inherit;font-weight:600;font-size:1.1rem;padding:12px;border:0;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer}
+  form button:hover{filter:brightness(.95)}
+  .hp{position:absolute;inset-inline-start:-9999px}
+  .form-msg{text-align:center;min-height:1.5em;margin:6px 0 0}
+
+  /* מדיה */
+  .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+  .yt{position:relative;display:block;aspect-ratio:16/9;background:#000 center/cover no-repeat;border:0;padding:0;cursor:pointer;border-radius:4px;overflow:hidden;width:100%}
+  .yt::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;border-radius:12px;background:rgba(0,0,0,.65) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") center/28px no-repeat}
+  .yt:hover::after{background-color:var(--accent)}
+  .yt.playing::after{display:none}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .single{max-width:640px;margin:0 auto 28px}
+  .audio{margin-top:20px}
+  .audio iframe{width:100%;height:42px;border:0}
+  .embed iframe{width:100%;border:0;border-radius:12px}
+  .toys{display:grid;gap:20px;direction:ltr}
+  .toys iframe{width:100%;height:520px;border:1px solid var(--line);border-radius:6px;background:#fafafa}
+  .btn-link{color:var(--accent);font-family:var(--title);font-size:1.8rem;font-weight:700}
+
+  /* משפטי */
+  details.legal{max-width:720px;margin:0 auto;font-size:.95rem}
+  details.legal summary{cursor:pointer;font-family:var(--title);font-size:2rem;font-weight:700;text-align:center;list-style:none}
+  details.legal summary::-webkit-details-marker{display:none}
+  details.legal h4{font-weight:600;margin:18px 0 4px}
+  .small{font-size:.9rem;color:var(--muted)}
+
+  /* תחתית */
+  footer{border-top:1px solid var(--line);padding:40px 0 56px;text-align:center}
+  footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font-family:var(--title);font-size:1.7rem;font-weight:700}
+  footer nav a{text-decoration:none}
+  footer nav a:hover{color:var(--accent)}
+  .social{display:flex;justify-content:center;gap:18px;margin:24px 0 8px}
+  .social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--line)}
+  .social a:hover{border-color:var(--accent);color:var(--accent)}
+  .social svg{width:20px;height:20px;fill:currentColor}
+  .legal-links a{margin:0 8px}
+
+  /* אנגלית: הפונטים והסגנון המקוריים מ-Carrd */
+  html[lang=en] body{font-family:'Abel',sans-serif}
+  html[lang=en] .sub,
+  html[lang=en] main > section:not(#form) h2,
+  html[lang=en] #about p,
+  html[lang=en] details.legal{font-family:var(--logo);font-weight:400;text-transform:uppercase;letter-spacing:.225rem;color:rgba(64,64,64,.75);font-size:1.5rem;line-height:1.5}
+  html[lang=en] #about p{font-size:1.35rem;text-align:center}
+  html[lang=en] details.legal summary{font-family:var(--logo);font-weight:400;font-size:1.8rem}
+  html[lang=en] details.legal h4{font-weight:400;color:var(--ink)}
+  html[lang=en] .hook{font-family:'Amatic SC',cursive;font-weight:400;text-transform:uppercase;color:var(--ink);font-size:2.25rem}
+  html[lang=en] #form h2{font-family:'Amatic SC',cursive;font-weight:700;font-size:2.6rem}
+  html[lang=en] #form h3{font-family:'Amatic SC',cursive;font-weight:700;font-size:2rem}
+  html[lang=en] #form p,html[lang=en] #contact p,html[lang=en] .steps{font-family:'Abel',sans-serif;font-size:1.125rem;line-height:1.875}
+  html[lang=en] form input,html[lang=en] form textarea{font-family:'Amatic SC',cursive;font-size:1.5rem;font-weight:700;color:var(--ink)}
+  html[lang=en] form button{font-family:'Amatic SC',cursive;font-weight:700;font-size:2rem;padding:6px}
+  html[lang=en] .credit{font-family:var(--logo);font-size:1.3rem;color:var(--ink)}
+  html[lang=en] .btn-link{font-family:var(--logo);font-weight:400;font-size:1.7rem}
+  html[lang=en] footer nav{font-family:var(--logo);font-weight:400;font-size:2.4rem;color:var(--ink);gap:4px 40px}
+  html[lang=en] .legal-links{font-family:var(--logo);font-size:1.3rem;text-transform:lowercase;color:var(--ink)}
+
+  @media (max-width:600px){ header{padding-top:64px} .logo{font-size:3.4rem} h2{font-size:2.2rem} .hook{font-size:1.8rem} .toys iframe{height:440px} }
+
+  /* פריסה: כותרת ותפריט קבועים, האמצע נגלל לפי הצורך */
+  html,body{height:100%}
+  body{display:flex;flex-direction:column;height:100vh;height:100dvh;overflow:hidden}
+  header{flex:none;position:relative;padding:14px 0 6px !important;border-bottom:1px solid var(--line)}
+  header .logo{font-size:3.2rem}
+  header .sub{font-size:1.15rem !important;margin-top:-4px}
+  main{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  main > section{border-top:0;padding:24px 0 40px;min-height:0}
+  footer{flex:none;padding:8px 0 10px !important}
+  footer nav{font-size:1.7rem !important;gap:0 26px !important;line-height:1.5}
+  .footer-row{display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:4px}
+  .social{margin:0 !important;gap:10px !important}
+  .social a{width:30px !important;height:30px !important}
+  .social svg{width:16px !important;height:16px !important}
+  .legal-links{margin:0}
+  .lang-switch{position:absolute !important;top:10px !important;left:12px !important;right:auto !important;inset-inline-end:auto}
+
+  /* תמונה לרוחב כל המסך, כמו במקור */
+  #home{padding-top:0 !important}
+  .hero-img{display:block;width:100%;max-width:none;height:clamp(220px,48vh,520px);object-fit:cover;object-position:50% 40%;margin:0 0 6px;border-radius:0}
+
+  /* כותרת עמוד לפי שם הקישור */
+  .page-title{font-family:var(--title);font-weight:700;font-size:2.8rem;text-align:center;margin:0 0 6px;line-height:1.2;color:var(--ink)}
+  html[lang=en] .page-title{font-family:var(--logo);font-weight:400;font-size:3rem}
+  .page-title + h2{margin-top:0}
+  details.legal summary{display:none}
+
+  @media (max-width:600px){
+    header .logo{font-size:2.4rem}
+    header .sub{font-size:.95rem !important;letter-spacing:.12rem !important}
+    .lang-switch{top:6px !important;font-size:.8rem}
+    .lang-switch button{padding:4px 9px}
+    header{padding-top:34px !important}
+    footer nav{flex-wrap:nowrap !important;justify-content:flex-start !important;overflow-x:auto;white-space:nowrap;font-size:1.4rem !important;padding:0 16px;scrollbar-width:none}
+    footer nav::-webkit-scrollbar{display:none}
+    footer .wrap{padding:0}
+    .page-title{font-size:2.3rem} html[lang=en] .page-title{font-size:2.4rem}
+    .hero-img{height:34vh}
+  }
+
+  /* עברית: Playpen Sans Hebrew לכותרות (ברוח Nanum Pen), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
+  html[lang=he]{--title:'Playpen Sans Hebrew', cursive; --body:'Noto Sans Hebrew', sans-serif}
+  html[lang=he] body{font-stretch:75%;font-weight:300}
+  html[lang=he] b, html[lang=he] .steps b{font-weight:500}
+  html[lang=he] h2, html[lang=he] h3, html[lang=he] .page-title, html[lang=he] .hook,
+  html[lang=he] footer nav, html[lang=he] details.legal summary, html[lang=he] .btn-link{font-weight:300}
+  html[lang=he] .sub{font-weight:300;font-size:1rem !important;letter-spacing:.05em;color:var(--muted)}
+  html[lang=he] main > section:not(#form) h2{font-size:1.5rem;color:var(--muted)}
+  html[lang=he] .page-title{font-size:2.3rem}
+  html[lang=he] #form h2{font-size:2rem}
+  html[lang=he] h3{font-size:1.5rem}
+  html[lang=he] .hook{font-size:1.6rem}
+  html[lang=he] footer nav{font-size:1.25rem !important;gap:0 22px !important;line-height:2}
+  html[lang=he] form input, html[lang=he] form textarea, html[lang=he] form button{font-family:var(--body);font-stretch:75%}
+  html[lang=he] form button{font-family:var(--title);font-weight:400;font-size:1.3rem}
+  .lang-switch button[lang=he]{font-family:'Noto Sans Hebrew',sans-serif}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="lang-switch" role="group" aria-label="Language / שפה">
+  <button type="button" data-set-lang="he" lang="he">עברית</button>
+  <button type="button" data-set-lang="en" lang="en">English</button>
+</div>
+  <div class="wrap">
+    <p class="logo"><a href="#home">Noam Bartov</a></p>
+    <p class="sub"><span data-l="en">composer &amp; music producer</span><span data-l="he">מלחין ומפיק מוזיקלי</span></p>
+  </div>
+</header>
+
+<main>
+<section id="home">
+  <img class="hero-img" src="images/noam.jpg" width="1600" height="1067" alt="Noam Bartov in his home studio" fetchpriority="high">
+  <div class="wrap center">
+    <a class="credit" href="https://yuvalurbach.myportfolio.com/" target="_blank" rel="noopener"><span data-l="en">photo: Yuval Urbach</span><span data-l="he">צילום: יובל אורבך</span></a>
+    <p class="hook" data-l="he">זמרים-יוצרים? יש לכם שיר שמחכה להפוך להקלטה? <a href="#form">השאירו פרטים</a> ואחזור אליכם</p>
+    <p class="hook" data-l="en">Singer-songwriter? Got a song waiting to be recorded? <a href="#form">Leave your details</a> and I'll get back to you</p>
+  </div>
+</section>
+
+<!-- המודעה בפייסבוק מפנה ל-#form, לכן ה-id הזה חייב להישאר -->
+<section id="form">
+  <div class="wrap">
+    <h2 data-l="he">יש לך שיר שמחכה להפוך להקלטה?</h2>
+    <h2 data-l="en">Got a song waiting to be recorded?</h2>
+    <div class="single"><button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button></div>
+    <p class="text" data-l="he">אני נעם ברטוב, מלחין, מעבד ומפיק. באולפן הביתי שלי אני מלווה זמרים-יוצרים מהסקיצה ועד שיר מוקלט, מעובד ומוכן לעולם, עם נגנים חיים.</p>
+    <p class="text" data-l="en">I'm Noam Bartov, a composer, arranger and producer. In my home studio I guide singer-songwriters from a first sketch to a song that's recorded, arranged and ready for the world, with live musicians.</p>
+
+    <h3><span data-l="he">איך זה עובד?</span><span data-l="en">How does it work?</span></h3>
+    <ol class="steps" data-l="he">
+      <li><b>פגישת היכרות:</b> מכירים, בוחרים יחד שיר, מקליטים סקיצה ראשונה ומדברים לאן הוא רוצה ללכת.</li>
+      <li><b>תוכנית הפקה:</b> אני מציע עיבוד, לוח זמנים ועלות, ואתם מחליטים אם ממשיכים.</li>
+      <li><b>בונים את השיר שכבה אחר שכבה:</b> אני מנגן גיטרה ובס, ולפי מה שהשיר מבקש מצטרפים כלי הקשה, פסנתר, כלי קשת או נשיפה. עוצרים בכל שלב להקשיב יחד, עד מיקס שמוכן לספוטיפיי.</li>
+    </ol>
+    <ol class="steps" data-l="en">
+      <li><b>First meeting:</b> we get to know each other, choose a song together, record a first sketch and talk about where it wants to go.</li>
+      <li><b>Production plan:</b> I propose an arrangement, a timeline and a cost, and you decide whether to go ahead.</li>
+      <li><b>Building the song layer by layer:</b> I play guitar and bass, and percussion, piano, strings or winds join in as the song needs. We stop at every stage to listen together, all the way to a mix that's ready for Spotify.</li>
+    </ol>
+
+    <h3><span data-l="he">כמה זה עולה?</span><span data-l="en">What does it cost?</span></h3>
+    <p class="text" data-l="he">פגישת ההיכרות עולה 800 ש"ח, ואם ממשיכים יחד הסכום מקוזז ממחיר ההפקה. העלות הסופית של ההפקה משתנה, תלויה בהחלטות האמנותיות שנקבל, ובכל מקרה נדע אותה לפני שנצא לדרך.</p>
+    <p class="text" data-l="en">The first meeting costs 800 ILS, and if we continue together it's deducted from the production price. The final cost depends on the artistic decisions we make, and either way you'll know it before we start.</p>
+
+    <h3><span data-l="he">ספרו לי על השיר שלכם</span><span data-l="en">Tell me about your song</span></h3>
+    <!-- TODO: action של שירות הטפסים ייקבע בשלב האחסון -->
+    <form id="song-form" class="site-form" action="#" method="post">
+      <input type="text" name="name" data-ph-he="שמי" data-ph-en="Name" maxlength="128" required autocomplete="name">
+      <input type="email" name="email" data-ph-he="מייל" data-ph-en="Email" maxlength="128" required autocomplete="email">
+      <input type="tel" name="phone" data-ph-he="טלפון" data-ph-en="Phone" minlength="7" maxlength="28" pattern="[0-9\-\(\)+ #*]+" required autocomplete="tel">
+      <textarea name="message" data-ph-he="הודעה" data-ph-en="Message" maxlength="16384" required></textarea>
+      <input class="hp" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="form" value="song">
+      <input type="hidden" name="lang" value="">
+      <button type="submit"><span data-l="he">שליחה</span><span data-l="en">Send</span></button>
+      <p class="form-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="orchestral">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></h1>
+    <h2><span data-l="en">some of my orchestral works, press to play and view</span><span data-l="he">יצירות תזמורתיות שלי, לחצו לצפייה והאזנה</span></h2>
+    <div class="grid">
+      <button class="yt" type="button" data-id="26jr1bRnnfQ" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="_fV1tio9f8E" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="RFX2oWaRHB8" aria-label="Play video"></button>
+    </div>
+  </div>
+</section>
+
+<section id="production">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Studio Production</span><span data-l="he">הפקה באולפן</span></h1>
+    <h2><span data-l="en">musical production for other artists</span><span data-l="he">הפקה מוזיקלית לאמנים אחרים</span></h2>
+    <div class="grid">
+      <button class="yt" type="button" data-id="JBJwM_0zgWo" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="mujNX9upjF8" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="55U3XfvD5Qs" aria-label="Play video"></button>
+    </div>
+    <div class="grid audio">
+      <iframe loading="lazy" title="Bandcamp album" src="https://bandcamp.com/EmbeddedPlayer/album=2202869279/size=small/bgcol=ffffff/linkcol=C47A5A/transparent=true/"></iframe>
+      <iframe loading="lazy" title="Bandcamp album" src="https://bandcamp.com/EmbeddedPlayer/album=2208743383/size=small/bgcol=ffffff/linkcol=C47A5A/transparent=true/"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="film">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></h1>
+    <h2><span data-l="en">some of my music for films and media</span><span data-l="he">מוזיקה שכתבתי לסרטים ולמדיה</span></h2>
+    <div class="grid">
+      <button class="yt" type="button" data-id="K2LZRdn3qeY" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="8mRoZdn0MX4" aria-label="Play video"></button>
+    </div>
+  </div>
+</section>
+
+<section id="collaborations">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></h1>
+    <h2><span data-l="en">collaborations with various artists</span><span data-l="he">שיתופי פעולה עם אמנים שונים</span></h2>
+    <div class="grid">
+      <button class="yt" type="button" data-id="pAR4MPIz358" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="BeP0PL2gzmo" aria-label="Play video"></button>
+      <button class="yt" type="button" data-id="YRlsWK8aoJ4" aria-label="Play video"></button>
+    </div>
+  </div>
+</section>
+
+<section id="streaming">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Streaming</span><span data-l="he">סטרימינג</span></h1>
+    <h2><span data-l="en">some streaming links to my work</span><span data-l="he">להאזנה בשירותי הסטרימינג</span></h2>
+    <div class="grid embed">
+      <iframe loading="lazy" title="Spotify" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" src="https://open.spotify.com/embed/artist/4x23q9U8QO3xhFk39a7l5Q"></iframe>
+      <iframe loading="lazy" title="Apple Music" height="175" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/song/brick-live/1819152478"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="toys">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Toys</span><span data-l="he">צעצועים</span></h1>
+    <h2><span data-l="en">a digital playground with machines i'm building. please touch and turn, enjoy!</span><span data-l="he">מגרש משחקים דיגיטלי עם מכונות שאני בונה. געו, סובבו ותיהנו!</span></h2>
+    <p class="center"><a class="btn-link" href="https://noambartov.github.io/sound-playground/" target="_blank" rel="noopener"><span data-l="en">click here for full sound playground</span><span data-l="he">למגרש הצלילים המלא</span></a></p>
+    <div class="toys">
+      <iframe loading="lazy" title="granular synth" allowfullscreen src="https://noambartov.github.io/toys/granular_synth.html"></iframe>
+      <iframe loading="lazy" title="soup generator" allowfullscreen src="https://noambartov.github.io/toys/Soup_Generator.htm"></iframe>
+      <iframe loading="lazy" title="radical engine" allowfullscreen src="https://noambartov.github.io/toys/radical_chaos_engin.html"></iframe>
+      <iframe loading="lazy" title="dodecaphonic melody maker" allowfullscreen src="https://noambartov.github.io/toys/dodecaphonic_melody_maker.html"></iframe>
+      <iframe loading="lazy" title="sample radio" allowfullscreen src="https://noambartov.github.io/toys/sample_radio.html"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">About Me</span><span data-l="he">עליי</span></h1>
+    <h2><span data-l="en">being a musician my way</span><span data-l="he">להיות מוזיקאי בדרך שלי</span></h2>
+    <div class="text" data-l="en">
+      <p>I have been a musician all my life. Whistling to myself as a child, playing the guitar to the radio tunes, rocking heavy in my teens, playing bass, drums, singing, conducting and performing. In the last decade or so I have decided to make music my primary focus. I have studied for a bachelor and a masters degree in composition at the Academy of Music and Dance in Jerusalem, Israel, and set up my home studio which is fully equipped for high-end recording of live musicians as well as composing “in the box”.</p>
+      <p>I am interested in collaborations with other artists: film makers, poets, dancers, installation builders and painters. I am passionate about making other people’s music come to life in my studio, taking the idea and realizing it to a fully expressive musical piece that goes out into the world.</p>
+      <p>As an orchestral composer I take absolute freedom in my work and strive to achieve new sounds that are true to the moment of creation. My compositions vary from the absolute abstract avant-garde of contemporary music, to calm emotional tonal movements. I lean toward messiness, but often find joy in simplicity.</p>
+    </div>
+    <div class="text" data-l="he">
+      <p>אני מוזיקאי כל חיי. שרקתי לעצמי כילד, ניגנתי בגיטרה עם השירים ברדיו, ניגנתי רוק כבד בנעוריי, ניגנתי בבס ובתופים, שרתי, ניצחתי והופעתי. בעשור האחרון בערך החלטתי להפוך את המוזיקה לעיסוק המרכזי שלי. למדתי לתואר ראשון ושני בקומפוזיציה באקדמיה למוסיקה ולמחול בירושלים, והקמתי אולפן ביתי שמאובזר במלואו להקלטה איכותית של נגנים חיים וגם להלחנה בתוך המחשב.</p>
+      <p>אני מחפש שיתופי פעולה עם אמנים אחרים: יוצרי קולנוע, משוררים, רקדנים, בוני מיצבים וציירים. אני אוהב להפיח חיים במוזיקה של אחרים באולפן שלי, לקחת רעיון ולהפוך אותו ליצירה מוזיקלית מלאת הבעה שיוצאת לעולם.</p>
+      <p>כמלחין תזמורתי אני לוקח לעצמי חופש מוחלט, ושואף להגיע לצלילים חדשים שנאמנים לרגע היצירה. היצירות שלי נעות בין האוונגרד המופשט של המוזיקה העכשווית לבין פרקים טונאליים שקטים ורגשיים. אני נוטה לבלגן, אבל לא פעם מוצא שמחה בפשטות.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Contact</span><span data-l="he">צור קשר</span></h1>
+    <p class="text center" data-l="en">Want to work together, commission a piece, or just say hello? Write to me here, or at <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
+    <p class="text center" data-l="he">רוצים לעבוד יחד, להזמין יצירה או סתם להגיד שלום? כתבו לי כאן, או במייל <a href="mailto:noambt@gmail.com">noambt@gmail.com</a>.</p>
+    <!-- TODO: action של שירות הטפסים ייקבע בשלב האחסון -->
+    <form id="contact-form" class="site-form" action="#" method="post">
+      <input type="text" name="name" data-ph-he="שם" data-ph-en="Name" maxlength="128" required autocomplete="name">
+      <input type="email" name="email" data-ph-he="מייל" data-ph-en="Email" maxlength="128" required autocomplete="email">
+      <textarea name="message" data-ph-he="הודעה" data-ph-en="Message" maxlength="16384" required></textarea>
+      <input class="hp" type="text" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="form" value="general">
+      <input type="hidden" name="lang" value="">
+      <button type="submit"><span data-l="he">שליחה</span><span data-l="en">Send</span></button>
+      <p class="form-msg" role="status"></p>
+    </form>
+  </div>
+</section>
+
+<section id="privacy">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Privacy Statement</span><span data-l="he">מדיניות פרטיות</span></h1>
+    <details class="legal" data-l="en">
+      <summary>Privacy Policy</summary>
+      <p class="small">Last updated: 11.2026</p>
+      <p>This website serves as a portfolio and digital business card for Noam Bartov. We care about your privacy.</p>
+      <h4>1. Information We Collect</h4>
+      <p>If you choose to contact us via the contact form on this site, we collect your name, email address and phone number. We also use basic analytics to monitor site traffic.</p>
+      <h4>2. How We Use Your Information</h4>
+      <p>We use your contact details solely to respond to your inquiries. We do not sell, rent, or share your personal information with third parties.</p>
+      <h4>3. Third-Party Links &amp; Players</h4>
+      <p>This site embeds audio and video players (such as YouTube, Spotify, Bandcamp and Apple Music). These third-party services may use cookies. Please refer to their respective privacy policies.</p>
+      <h4>4. Contact Us</h4>
+      <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:noambt@gmail.com">noambt@gmail.com</a></p>
+    </details>
+    <details class="legal" data-l="he">
+      <summary>מדיניות פרטיות</summary>
+      <p class="small">עודכן לאחרונה: 11.2026</p>
+      <p>האתר משמש כתיק עבודות וככרטיס ביקור דיגיטלי של נעם ברטוב. הפרטיות שלכם חשובה לנו.</p>
+      <h4>1. איזה מידע נאסף</h4>
+      <p>אם תבחרו לפנות דרך טופס יצירת הקשר באתר, נשמור את השם, כתובת המייל ומספר הטלפון שלכם. בנוסף אנחנו משתמשים בכלי סטטיסטיקה בסיסי כדי לעקוב אחרי התנועה באתר.</p>
+      <h4>2. איך משתמשים במידע</h4>
+      <p>פרטי הקשר משמשים רק כדי לענות לפנייה שלכם. איננו מוכרים, משכירים או מעבירים את המידע האישי שלכם לצד שלישי.</p>
+      <h4>3. קישורים ונגנים של צד שלישי</h4>
+      <p>באתר משולבים נגני אודיו ווידאו (כמו YouTube, Spotify, Bandcamp ו-Apple Music). שירותים אלה עשויים להשתמש בעוגיות, בהתאם למדיניות הפרטיות שלהם.</p>
+      <h4>4. יצירת קשר</h4>
+      <p>לשאלות על מדיניות הפרטיות אפשר לכתוב אל: <a href="mailto:noambt@gmail.com">noambt@gmail.com</a></p>
+    </details>
+  </div>
+</section>
+
+<section id="accessibility">
+  <div class="wrap">
+    <h1 class="page-title"><span data-l="en">Accessibility</span><span data-l="he">נגישות</span></h1>
+    <details class="legal" data-l="en">
+      <summary>Accessibility Statement</summary>
+      <p>Noam Bartov is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards.</p>
+      <h4>Conformance Status</h4>
+      <p>This site is designed to be responsive and accessible. We aim to maintain good color contrast, readable fonts, and clear navigation.</p>
+      <h4>Feedback &amp; Contact</h4>
+      <p>We welcome your feedback on the accessibility of this website. If you encounter any accessibility barriers or have trouble listening to the music or accessing the content, please let us know. We will do our best to assist you and provide alternative ways to access the materials.</p>
+      <p>Contact Email: <a href="mailto:noambt@gmail.com">noambt@gmail.com</a></p>
+    </details>
+    <details class="legal" data-l="he">
+      <summary>הצהרת נגישות</summary>
+      <p>נעם ברטוב מחויב להנגשת האתר לאנשים עם מוגבלות. אנחנו משפרים כל הזמן את חוויית השימוש לכולם ופועלים לפי תקני הנגישות הרלוונטיים.</p>
+      <h4>מצב ההתאמה</h4>
+      <p>האתר מותאם לכל גודל מסך ונבנה מתוך כוונה להיות נגיש: ניגודיות צבעים טובה, גופנים קריאים וניווט ברור.</p>
+      <h4>משוב ויצירת קשר</h4>
+      <p>נשמח לשמוע מכם על נגישות האתר. אם נתקלתם בקושי, או שקשה לכם להאזין למוזיקה או להגיע לתוכן, ספרו לנו ונעשה כמיטב יכולתנו לעזור ולהציע דרך חלופית.</p>
+      <p>מייל ליצירת קשר: <a href="mailto:noambt@gmail.com">noambt@gmail.com</a></p>
+    </details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav aria-label="Sections">
+      <a href="#home"><span data-l="en">Home</span><span data-l="he">ראשי</span></a>
+      <a href="#orchestral"><span data-l="en">Orchestral</span><span data-l="he">תזמורתי</span></a>
+      <a href="#production"><span data-l="en">Studio Production</span><span data-l="he">הפקה באולפן</span></a>
+      <a href="#film"><span data-l="en">Film Scoring</span><span data-l="he">מוזיקה לסרטים</span></a>
+      <a href="#streaming"><span data-l="en">Streaming</span><span data-l="he">סטרימינג</span></a>
+      <a href="#collaborations"><span data-l="en">Collaborations</span><span data-l="he">שיתופי פעולה</span></a>
+      <a href="https://soundcloud.com/noam-bartov-394165908" target="_blank" rel="noopener">In The Box</a>
+      <a href="#toys"><span data-l="en">Toys</span><span data-l="he">צעצועים</span></a>
+      <a href="#about"><span data-l="en">About Me</span><span data-l="he">עליי</span></a>
+      <a href="#contact"><span data-l="en">Contact</span><span data-l="he">צור קשר</span></a>
+    </nav>
+    <div class="footer-row">
+    <div class="social">
+      <a href="https://www.instagram.com/noamstudio90/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2zm0 1.8c2.7 0 3 0 4 .1 2.6.1 3.9 1.4 4 4 .1 1 .1 1.3.1 4s0 3-.1 4c-.1 2.6-1.4 3.9-4 4-1 .1-1.3.1-4 .1s-3 0-4-.1c-2.6-.1-3.9-1.4-4-4-.1-1-.1-1.3-.1-4s0-3 .1-4c.1-2.6 1.4-3.9 4-4 1-.1 1.3-.1 4-.1z"/></svg></a>
+      <a href="https://www.facebook.com/noam.bartov.2024" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6.3c0-.8.2-1.3 1.4-1.3H17V2h-2.6C11.3 2 10 3.6 10 6.2V8H8v3h2v11h4V11h2.7l.3-3h-3z"/></svg></a>
+      <a href="https://www.youtube.com/channel/UCBq8MQEzcp3dUQGlKJZiymg" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg></a>
+      <a href="mailto:noambt@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 2.8-8 5-8-5V17h16V9.8z"/></svg></a>
+    </div>
+    <p class="small legal-links">
+      <a href="#privacy"><span data-l="en">privacy statement</span><span data-l="he">מדיניות פרטיות</span></a>·<a href="#accessibility"><span data-l="en">accessibility</span><span data-l="he">נגישות</span></a>
+    </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var html = document.documentElement;
+  var titles = {en: 'Noam Bartov | composer & music producer', he: 'נעם ברטוב | מלחין ומפיק מוזיקלי'};
+
+  function setLang(l, save) {
+    html.lang = l; html.dir = l === 'he' ? 'rtl' : 'ltr';
+    document.title = titles[l];
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', b.dataset.setLang === l);
+    });
+    document.querySelectorAll('[data-ph-' + l + ']').forEach(function (el) {
+      el.placeholder = el.getAttribute('data-ph-' + l);
+    });
+    document.querySelectorAll('.site-form [name=lang]').forEach(function (i) { i.value = l; });
+    if (save) { try { localStorage.setItem('lang', l); } catch (e) {} }
+  }
+  document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.dataset.setLang, true); });
+  });
+  setLang(html.lang);
+
+  // YouTube: הנגן נטען רק בלחיצה, כדי שהדף ייטען מהר
+  document.querySelectorAll('.yt').forEach(function (b) {
+    var id = b.dataset.id;
+    b.style.backgroundImage = 'url(https://i.ytimg.com/vi_webp/' + id + '/maxresdefault.webp)';
+    b.addEventListener('click', function () {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1';
+      f.allow = 'autoplay; encrypted-media; fullscreen; picture-in-picture';
+      f.allowFullscreen = true;
+      f.title = 'YouTube video';
+      b.classList.add('playing');
+      b.appendChild(f);
+    }, {once: true});
+  });
+
+  // ניתוב: הכתובת #xxx קובעת איזה חלק מוצג
+  function route() {
+    var id = location.hash.slice(1) || 'home';
+    var sec = document.querySelector('main > section#' + CSS.escape(id)) || document.getElementById('home');
+    document.querySelectorAll('main > section').forEach(function (s) { s.classList.toggle('active', s === sec); });
+    sec.querySelectorAll('details').forEach(function (d) { d.open = true; });
+    document.querySelectorAll('footer nav a').forEach(function (a) {
+      a.classList.toggle('current', a.getAttribute('href') === '#' + sec.id);
+    });
+    document.querySelector('main').scrollTop = 0;
+  }
+  window.addEventListener('hashchange', route); route();
+</script>
+</body>
+</html>
