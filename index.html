@@ -206,7 +206,9 @@
 
   /* עברית: Ktav Yad CLM לכותרות (ברוח Nanum Pen, קובץ מקומי ב-fonts/), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
   @font-face{font-family:'Ktav Yad';src:url(fonts/KtavYadCLM-BoldItalic.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0590-05FF,U+FB1D-FB4F}
-  html[lang=he]{--title:'Ktav Yad', 'Playpen Sans Hebrew', cursive; --body:'Noto Sans Hebrew', sans-serif}
+  /* הפונט מכתב היד של נעם (Calligraphr), ראשון בשרשרת. Ktav Yad נשאר כגיבוי */
+  @font-face{font-family:"Myfont";src:url("fonts/Myfont-Regular.otf") format("opentype");font-display:swap}
+  html[lang=he]{--title:"Myfont", 'Ktav Yad', 'Playpen Sans Hebrew', sans-serif; --body:'Noto Sans Hebrew', sans-serif}
   html[lang=he] body{font-stretch:75%;font-weight:300}
   html[lang=he] b, html[lang=he] .steps b{font-weight:500}
   html[lang=he] h2, html[lang=he] h3, html[lang=he] .page-title, html[lang=he] .hook,
