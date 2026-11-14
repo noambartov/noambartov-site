@@ -141,7 +141,7 @@
   html[lang=he] .rack-all{font-family:var(--title)}
   .mod.open .mod-body{display:block}
   .mod-body iframe{display:block;width:100%;height:520px;border:0;border-radius:3px;background:#fafafa}
-  @media (max-width:600px){ .mod-name{font-size:1.45rem} .mod-body iframe{height:440px} .btn-link.pencil{font-size:1.1rem !important;padding:6px 14px;white-space:nowrap} }
+  @media (max-width:600px){ .mod-name{font-size:1.45rem} .mod-body iframe{height:440px} .btn-link.pencil{font-size:1.1rem !important;padding:6px 14px;white-space:nowrap} html[lang=he] .btn-link.pencil{font-size:.92rem !important} }
   @media (prefers-reduced-motion:reduce){ .led{transition:none} }
 
   /* משפטי */
@@ -230,7 +230,7 @@
   /* עברית: Ktav Yad CLM לכותרות (ברוח Nanum Pen, קובץ מקומי ב-fonts/), Noto Sans Hebrew צר ודק לטקסט (ברוח Abel) */
   @font-face{font-family:'Ktav Yad';src:url(fonts/KtavYadCLM-BoldItalic.woff2) format('woff2');font-weight:100 900;font-style:normal;font-display:swap;unicode-range:U+0590-05FF,U+FB1D-FB4F}
   /* הפונט מכתב היד של נעם (גרסה 4, 14.11). Ktav Yad נשאר כגיבוי: כדי לחזור אליו מוחקים את "Myfont" מהשורה הבאה */
-  @font-face{font-family:"Myfont";src:url("fonts/Myfont-Regular.otf") format("opentype");font-display:swap;unicode-range:U+0590-05FF}
+  @font-face{font-family:"Myfont";src:url("fonts/Myfont-Regular.otf") format("opentype");font-display:swap;unicode-range:U+0590-05FF;size-adjust:120%}
   html[lang=he]{--title:"Myfont", 'Ktav Yad', 'Playpen Sans Hebrew', cursive; --body:'Noto Sans Hebrew', sans-serif}
   /* ברווח של Myfont צר מדי, מרחיבים קצת בין מילים */
   html[lang=he] .logo, html[lang=he] .page-title, html[lang=he] h2, html[lang=he] h3, html[lang=he] .hook, html[lang=he] footer nav, html[lang=he] .btn-link, html[lang=he] .rack-all, html[lang=he] form button{word-spacing:.18em}
