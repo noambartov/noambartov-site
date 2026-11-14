@@ -137,7 +137,7 @@
   .social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--line)}
   .social a:hover{border-color:var(--accent);color:var(--accent)}
   .social svg{width:20px;height:20px;fill:currentColor}
-  .legal-links a{margin:0 8px}
+  .legal-links a{margin:0}
 
   /* אנגלית: הפונטים והסגנון המקוריים מ-Carrd */
   html[lang=en] body{font-family:'Abel',sans-serif}
@@ -176,6 +176,7 @@
   .social a{width:30px !important;height:30px !important}
   .social svg{width:16px !important;height:16px !important}
   .legal-links{margin:0}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .lang-switch{position:absolute !important;top:10px !important;left:12px !important;right:auto !important;inset-inline-end:auto}
 
   /* תמונה לרוחב כל המסך, כמו במקור */
@@ -236,6 +237,10 @@
   @media (max-width:600px){
     footer nav{display:grid !important;grid-template-columns:repeat(3,auto);justify-content:center !important;justify-items:center;overflow-x:visible;white-space:nowrap;gap:0 24px !important;padding:0 8px;font-size:1.25rem !important}
     html[lang=he] footer nav{font-size:1.2rem !important}
+    /* שתי שורות של 3, אותו רווח בין כל שתי מילים */
+    footer nav{display:flex !important;flex-wrap:wrap !important;justify-content:center !important;gap:0 26px !important}
+    footer nav::before{content:"";flex-basis:100%;order:1}
+    footer nav a:nth-child(n+4){order:2}
   }
   /* Ktav Yad גדול יותר מ-Playpen באותו גודל, לכן מקטינים */
   html[lang=he] .page-title{font-size:2rem}
@@ -529,9 +534,10 @@
       <a href="https://www.youtube.com/channel/UCBq8MQEzcp3dUQGlKJZiymg" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3-5.8 3z"/></svg></a>
       <a href="mailto:noambt@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5 8-5V7H4zm16 2.8-8 5-8-5V17h16V9.8z"/></svg></a>
     </div>
-    <p class="small legal-links">
-      <a href="#privacy"><span data-l="en">privacy statement</span><span data-l="he">מדיניות פרטיות</span></a>·<a href="#accessibility"><span data-l="en">accessibility</span><span data-l="he">נגישות</span></a>
-    </p>
+    <div class="social legal-links">
+      <a href="#privacy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a5 5 0 0 0-5 5v3H5v12h14V10h-2V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9V7zm3 7a2 2 0 0 1 1 3.7V20h-2v-2.3A2 2 0 0 1 12 14z"/></svg><span class="vh" data-l="en">privacy statement</span><span class="vh" data-l="he">מדיניות פרטיות</span></a>
+      <a href="#accessibility"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="4" r="2"/><path d="M4 7.5 5 9.5l5-1v4l-2.5 9 2 .5L12 15l2.5 7 2-.5-2.5-9v-4l5 1 1-2c-5 1-11 1-16 0z"/></svg><span class="vh" data-l="en">accessibility</span><span class="vh" data-l="he">נגישות</span></a>
+    </div>
     </div>
   </div>
 </footer>
