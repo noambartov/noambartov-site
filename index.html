@@ -137,6 +137,11 @@
   .mod.open .knob,.mod-head:hover .knob{transform:rotate(calc(var(--r) + 120deg))}
   .jack{width:13px;height:13px;border-radius:50%;background:#1b1a19;box-shadow:0 0 0 3px #a9a397;flex:none}
   .mod-body{display:none;padding:0 10px 10px}
+  .rack-all{all:unset;box-sizing:border-box;cursor:pointer;justify-self:end;display:flex;align-items:center;gap:8px;color:#d8d2c6;font-family:var(--logo);font-size:1.15rem;padding:0 6px 2px}
+  .rack-all .led{width:9px;height:9px;border-radius:50%;background:#77736b}
+  .rack:has(.mod.open) .rack-all .led{background:#e07a4a;box-shadow:0 0 8px #e07a4a}
+  .rack-all:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  html[lang=he] .rack-all{font-family:var(--title)}
   .mod.open .mod-body{display:block}
   .mod-body iframe{display:block;width:100%;height:520px;border:0;border-radius:3px;background:#fafafa}
   @media (max-width:600px){ .mod-name{font-size:1.45rem} .mod-body iframe{height:440px} .btn-link.pencil{font-size:1.1rem !important;padding:6px 14px;white-space:nowrap} }
@@ -427,6 +432,7 @@
     <h2><span data-l="en">a digital playground with machines i'm building. please touch and turn, enjoy!</span><span data-l="he">מגרש משחקים דיגיטלי, מעין אובססיה טכנולוגית שכזאת. מותר וצריך לגעת ולהרעיש!</span></h2>
     <p class="center"><a class="btn-link pencil" href="https://noambartov.github.io/sound-playground/" target="_blank" rel="noopener"><svg viewBox="0 0 200 50" preserveAspectRatio="none" aria-hidden="true"><path d="M20 8 C80 -2 170 2 192 18 C204 34 150 48 90 46 C30 44 2 36 6 22 C10 10 40 4 70 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><span data-l="en">click here for full sound playground ↗</span><span data-l="he">קישור למרחב אינסופי של מכונות רעש ↖</span></a></p>
     <div class="rack">
+      <button type="button" class="rack-all"><span class="led"></span><span data-l="he">הכל פועל / הכל כבוי</span><span data-l="en">all on / all off</span></button>
       <div class="mod" data-src="https://noambartov.github.io/toys/granular_synth.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#e07a4a"></span><span class="mod-name">granular synth</span><span class="knob" style="--r:-40deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
       <div class="mod" data-src="https://noambartov.github.io/toys/Soup_Generator.htm"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#5b9bd5"></span><span class="mod-name">soup generator</span><span class="knob" style="--r:70deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
       <div class="mod" data-src="https://noambartov.github.io/toys/radical_chaos_engin.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#d8b84a"></span><span class="mod-name">radical engine</span><span class="knob" style="--r:-110deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
@@ -604,21 +610,24 @@
   setLang(html.lang);
 
   // YouTube: הנגן נטען רק בלחיצה, כדי שהדף ייטען מהר
-  // צעצועים: פתיחת מודול טוענת את הצעצוע, וסגירה מכבה אותו (וגם את השאר, כדי שלא ינגנו יחד)
-  document.querySelectorAll('.mod').forEach(function (m) {
+  // צעצועים: כל מודול נפתח ונסגר לבד, כך שאפשר לנגן בכמה במקביל. סגירה מכבה את הצעצוע
+  function setMod(m, open) {
     var head = m.querySelector('.mod-head'), body = m.querySelector('.mod-body');
-    head.addEventListener('click', function () {
-      var opening = !m.classList.contains('open');
-      document.querySelectorAll('.mod.open').forEach(function (o) {
-        o.classList.remove('open'); o.querySelector('.mod-head').setAttribute('aria-expanded', 'false'); o.querySelector('.mod-body').innerHTML = '';
-      });
-      if (opening) {
-        var f = document.createElement('iframe');
-        f.src = m.dataset.src; f.title = m.querySelector('.mod-name').textContent; f.allowFullscreen = true; f.allow = 'autoplay';
-        body.appendChild(f); m.classList.add('open'); head.setAttribute('aria-expanded', 'true');
-        setTimeout(function () { m.scrollIntoView({behavior: 'smooth', block: 'start'}); }, 50);
-      }
-    });
+    if (open && !m.classList.contains('open')) {
+      var f = document.createElement('iframe');
+      f.src = m.dataset.src; f.title = m.querySelector('.mod-name').textContent; f.allowFullscreen = true; f.allow = 'autoplay';
+      body.appendChild(f); m.classList.add('open'); head.setAttribute('aria-expanded', 'true');
+    } else if (!open && m.classList.contains('open')) {
+      body.innerHTML = ''; m.classList.remove('open'); head.setAttribute('aria-expanded', 'false');
+    }
+  }
+  document.querySelectorAll('.mod').forEach(function (m) {
+    m.querySelector('.mod-head').addEventListener('click', function () { setMod(m, !m.classList.contains('open')); });
+  });
+  var rackAll = document.querySelector('.rack-all');
+  if (rackAll) rackAll.addEventListener('click', function () {
+    var mods = document.querySelectorAll('.mod'), anyClosed = [].some.call(mods, function (m) { return !m.classList.contains('open'); });
+    mods.forEach(function (m) { setMod(m, anyClosed); });
   });
   document.querySelectorAll('.yt').forEach(function (b) {
     var id = b.dataset.id;
