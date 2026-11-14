@@ -132,9 +132,6 @@
   .mod .led{width:9px;height:9px;border-radius:50%;flex:none;background:#77736b;transition:background .2s,box-shadow .2s}
   .mod.open .led,.mod-head:hover .led{background:var(--led);box-shadow:0 0 8px var(--led)}
   .mod-name{flex:1;font-family:var(--logo);font-size:1.7rem;line-height:1;color:#3b3935;text-transform:lowercase}
-  .knob{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#6c6a66,#262523);position:relative;flex:none;transform:rotate(var(--r));transition:transform .5s cubic-bezier(.3,1.4,.5,1)}
-  .knob::after{content:"";position:absolute;top:3px;left:14px;width:2px;height:9px;background:#f0e9dd;border-radius:1px}
-  .mod.open .knob,.mod-head:hover .knob{transform:rotate(calc(var(--r) + 120deg))}
   .jack{width:13px;height:13px;border-radius:50%;background:#1b1a19;box-shadow:0 0 0 3px #a9a397;flex:none}
   .mod-body{display:none;padding:0 10px 10px}
   .rack-all{all:unset;box-sizing:border-box;cursor:pointer;justify-self:end;display:flex;align-items:center;gap:8px;color:#d8d2c6;font-family:var(--logo);font-size:1.15rem;padding:0 6px 2px}
@@ -145,7 +142,7 @@
   .mod.open .mod-body{display:block}
   .mod-body iframe{display:block;width:100%;height:520px;border:0;border-radius:3px;background:#fafafa}
   @media (max-width:600px){ .mod-name{font-size:1.45rem} .mod-body iframe{height:440px} .btn-link.pencil{font-size:1.1rem !important;padding:6px 14px;white-space:nowrap} }
-  @media (prefers-reduced-motion:reduce){ .knob,.led{transition:none} }
+  @media (prefers-reduced-motion:reduce){ .led{transition:none} }
 
   /* משפטי */
   details.legal{max-width:720px;margin:0 auto;font-size:.95rem}
@@ -433,11 +430,11 @@
     <p class="center"><a class="btn-link pencil" href="https://noambartov.github.io/sound-playground/" target="_blank" rel="noopener"><svg viewBox="0 0 200 50" preserveAspectRatio="none" aria-hidden="true"><path d="M20 8 C80 -2 170 2 192 18 C204 34 150 48 90 46 C30 44 2 36 6 22 C10 10 40 4 70 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg><span data-l="en">click here for full sound playground ↗</span><span data-l="he">קישור למרחב אינסופי של מכונות רעש ↖</span></a></p>
     <div class="rack">
       <button type="button" class="rack-all"><span class="led"></span><span data-l="he">הכל פועל / הכל כבוי</span><span data-l="en">all on / all off</span></button>
-      <div class="mod" data-src="https://noambartov.github.io/toys/granular_synth.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#e07a4a"></span><span class="mod-name">granular synth</span><span class="knob" style="--r:-40deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
-      <div class="mod" data-src="https://noambartov.github.io/toys/Soup_Generator.htm"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#5b9bd5"></span><span class="mod-name">soup generator</span><span class="knob" style="--r:70deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
-      <div class="mod" data-src="https://noambartov.github.io/toys/radical_chaos_engin.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#d8b84a"></span><span class="mod-name">radical engine</span><span class="knob" style="--r:-110deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
-      <div class="mod" data-src="https://noambartov.github.io/toys/dodecaphonic_melody_maker.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#8fbf6a"></span><span class="mod-name">dodecaphonic melody maker</span><span class="knob" style="--r:140deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
-      <div class="mod" data-src="https://noambartov.github.io/toys/sample_radio.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#c86fa8"></span><span class="mod-name">sample radio</span><span class="knob" style="--r:20deg"></span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
+      <div class="mod" data-src="https://noambartov.github.io/toys/granular_synth.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#e07a4a"></span><span class="mod-name">granular synth</span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
+      <div class="mod" data-src="https://noambartov.github.io/toys/Soup_Generator.htm"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#5b9bd5"></span><span class="mod-name">soup generator</span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
+      <div class="mod" data-src="https://noambartov.github.io/toys/radical_chaos_engin.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#d8b84a"></span><span class="mod-name">radical engine</span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
+      <div class="mod" data-src="https://noambartov.github.io/toys/dodecaphonic_melody_maker.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#8fbf6a"></span><span class="mod-name">dodecaphonic melody maker</span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
+      <div class="mod" data-src="https://noambartov.github.io/toys/sample_radio.html"><button type="button" class="mod-head" aria-expanded="false"><span class="scw"></span><span class="led" style="--led:#c86fa8"></span><span class="mod-name">sample radio</span><span class="jack"></span><span class="scw"></span></button><div class="mod-body"></div></div>
     </div>
   </div>
 </section>
