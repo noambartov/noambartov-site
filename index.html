@@ -300,6 +300,7 @@
   .page-title::after{width:.45em;height:.32em;background:var(--s2);inset-inline-start:-.75em;bottom:.12em;clip-path:polygon(0 30%,70% 0,100% 80%,20% 100%);transform:rotate(24deg)}
 
   /* המלצות בדף הזמרים-יוצרים */
+  html[lang=en] .he-only{display:none}
   .quotes{max-width:680px;margin:0 auto 8px;display:grid;gap:22px}
   blockquote.quote{margin:0;padding-block:2px;padding-inline:18px 0;border-inline-start:2px solid var(--accent);text-align:start}
   blockquote.quote p{margin:0;font-size:1.05rem;line-height:1.75}
@@ -352,8 +353,9 @@
     <p class="text" data-l="he">פגישת ההיכרות עולה 800 ש"ח, ואם ממשיכים יחד הסכום מקוזז ממחיר ההפקה. העלות הסופית של ההפקה משתנה, תלויה בהחלטות האמנותיות שנקבל, ובכל מקרה נדע אותה לפני שנצא לדרך.</p>
     <p class="text" data-l="en">The first meeting costs 800 ILS, and if we continue together it's deducted from the production price. The final cost depends on the artistic decisions we make, and either way you'll know it before we start.</p>
 
-    <h3><span data-l="he">כמה מילים ממי שעבדו איתי</span><span data-l="en">A few words from people I've worked with</span></h3>
-    <div class="quotes">
+    <!-- המלצות: באנגלית מוסתר עד שנעם יאשר את התרגום (למחוק את class="he-only" משני האלמנטים) -->
+    <h3 class="he-only"><span data-l="he">כמה מילים ממי שעבדו איתי</span><span data-l="en">A few words from people I've worked with</span></h3>
+    <div class="quotes he-only">
       <blockquote class="quote">
         <p data-l="he">"החוויה העיקרית שלי בעבודה עם נעם הייתה איפשור מרחב של התנסות ללא שיפוטיות, קלילות, עין טובה, הומור, רוך, אמפתיה. זה הוציא ממני מלא יצירתיות שלראשונה חוויתי, וגם כשהתפזרתי מדי ידע לתת כיוון ומיקוד, ועשה את החוויה לכיפית מאוד עבורי."</p>
         <p data-l="en">"What I mostly experienced working with Noam was a space for experimenting without judgment: lightness, a kind eye, humor, gentleness, empathy. It brought out a lot of creativity in me that I was experiencing for the first time, and even when I got too scattered he knew how to give direction and focus, and made the whole thing a lot of fun for me."</p>
