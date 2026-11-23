@@ -298,6 +298,14 @@
   .page-title::before,.page-title::after{content:"";position:absolute;pointer-events:none;opacity:.55}
   .page-title::before{width:.75em;height:.5em;background:var(--s1);inset-inline-end:-.95em;top:.05em;clip-path:polygon(4% 22%,78% 0,100% 62%,30% 100%);transform:rotate(-8deg)}
   .page-title::after{width:.45em;height:.32em;background:var(--s2);inset-inline-start:-.75em;bottom:.12em;clip-path:polygon(0 30%,70% 0,100% 80%,20% 100%);transform:rotate(24deg)}
+
+  /* המלצות בדף הזמרים-יוצרים */
+  .quotes{max-width:680px;margin:0 auto 8px;display:grid;gap:22px}
+  blockquote.quote{margin:0;padding-block:2px;padding-inline:18px 0;border-inline-start:2px solid var(--accent);text-align:start}
+  blockquote.quote p{margin:0;font-size:1.05rem;line-height:1.75}
+  blockquote.quote p.who{margin-top:6px;color:var(--accent);font-size:.95rem}
+  blockquote.quote p.who::before{content:"— "}
+  html[lang=en] blockquote.quote p, html[lang=en] blockquote.quote p.who{font-family:'Abel',sans-serif}
 </style>
 </head>
 <body>
@@ -343,6 +351,20 @@
     <h3><span data-l="he">כמה זה עולה?</span><span data-l="en">What does it cost?</span></h3>
     <p class="text" data-l="he">פגישת ההיכרות עולה 800 ש"ח, ואם ממשיכים יחד הסכום מקוזז ממחיר ההפקה. העלות הסופית של ההפקה משתנה, תלויה בהחלטות האמנותיות שנקבל, ובכל מקרה נדע אותה לפני שנצא לדרך.</p>
     <p class="text" data-l="en">The first meeting costs 800 ILS, and if we continue together it's deducted from the production price. The final cost depends on the artistic decisions we make, and either way you'll know it before we start.</p>
+
+    <h3><span data-l="he">כמה מילים ממי שעבדו איתי</span><span data-l="en">A few words from people I've worked with</span></h3>
+    <div class="quotes">
+      <blockquote class="quote">
+        <p data-l="he">"החוויה העיקרית שלי בעבודה עם נעם הייתה איפשור מרחב של התנסות ללא שיפוטיות, קלילות, עין טובה, הומור, רוך, אמפתיה. זה הוציא ממני מלא יצירתיות שלראשונה חוויתי, וגם כשהתפזרתי מדי ידע לתת כיוון ומיקוד, ועשה את החוויה לכיפית מאוד עבורי."</p>
+        <p data-l="en">"What I mostly experienced working with Noam was a space for experimenting without judgment: lightness, a kind eye, humor, gentleness, empathy. It brought out a lot of creativity in me that I was experiencing for the first time, and even when I got too scattered he knew how to give direction and focus, and made the whole thing a lot of fun for me."</p>
+        <!-- QUOTE1_NAME -->
+      </blockquote>
+      <blockquote class="quote">
+        <p data-l="he">"אני ונעם נפגשנו באולפן שלו לעבוד על שיר שהלחנתי, וזו אחת החוויות הראשונות שלי באולפן. זה היה מרחב של סבלנות, רגישות והקשבה, שאיפשרו לי להיפתח ולשחק באינסוף האפשרויות שיש לאולפן להציע. נעם יודע איך לתת לשיר את מה שהוא צריך באופן יצירתי וביחד עם האמנית."</p>
+        <p data-l="en">"Noam and I met in his studio to work on a song I had composed, one of my very first studio experiences. It was a space of patience, sensitivity and listening, which let me open up and play with the endless possibilities a studio has to offer. Noam knows how to give a song what it needs, creatively and together with the artist."</p>
+        <p class="who"><span data-l="he">נועה</span><span data-l="en">Noa</span></p>
+      </blockquote>
+    </div>
 
     <h3><span data-l="he">ספרו לי על השיר שלכם</span><span data-l="en">Tell me about your song</span></h3>
     <form id="song-form" class="site-form" action="https://api.web3forms.com/submit" method="post">
